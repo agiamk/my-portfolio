@@ -1,3 +1,9 @@
+import Header from "./_components/Header/Header";
+
 export default function Home() {
-  return <div>鎌田大河のポートフォリオ</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
