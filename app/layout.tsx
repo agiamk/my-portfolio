@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { notoSansJp } from "@/fonts";
-import Sheet from "./_components/Sheet";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={notoSansJp.className}>
-        <Sheet>{children}</Sheet>
-      </body>
+      <body className={notoSansJp.className}>{children}</body>
     </html>
   );
 }
