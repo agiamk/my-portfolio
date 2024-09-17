@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   return (
     <Sheet>
       <div className="flex p-6 justify-between items-center">
-        <div>ポートフォリオ</div>
+        <h1>ポートフォリオ</h1>
         <nav className="flex justify-center items-center gap-7 underline underline-offset-2">
           {navItem.map((item) => (
             <Scroll to={item} smooth key={item} className="cursor-pointer">
