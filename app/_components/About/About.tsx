@@ -1,11 +1,10 @@
 import React from "react";
 import Sheet from "../Sheet";
-import Circle from "react-circle";
 
 const About = () => {
   return (
     <Sheet bgBlack>
-      <div className="flex p-6 gap-60">
+      <div className="flex gap-60">
         <h2 id="About" className="text-2xl whitespace-nowrap">
           About Me
         </h2>
@@ -18,14 +17,29 @@ const About = () => {
             2023年の12月からWeb制作会社でアルバイトをはじめ、ページの更新、量産や新規モジュールの開発などをしています。
             メインはフロントエンドですが、将来的にはフルスタックエンジニアとして活躍したいです。
           </p>
-          <h3 className="text-xl">Skills</h3>
-          <div>
-            <div className="relative w-28 h-28 bg-white rounded-full text-center overflow-hidden z-10 before:block before:absolute before:top-0 before:left-14 before:w-28 before:h-28 before:bg-orange-500 before:origin-right before:z-20">
-              <div>HTML</div>
-            </div>
-          </div>
         </div>
       </div>
+      <h3 className="text-xl">Skills</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>
+          アルバイトで使っています。アクセシビリティを意識したコーディングを勉強中です。
+        </dd>
+        <dt>CSS</dt>
+        <dd>
+          アルバイトで使っています。設計手法はBEMを導入し、保守しやすいコードを心がけています。
+        </dd>
+        <dt>JavaScript</dt>
+        <dd>
+          アルバイトで使っています。アクセシビリティを意識したコーディングを勉強中です。
+        </dd>
+        <dt>React/Next.js</dt>
+        <dd>
+          仕事では使っておらず、個人で勉強しています。本サイトはNext.jsで作られています。
+        </dd>
+        <dt>Java</dt>
+        <dd>学校で使っています</dd>
+      </dl>
     </Sheet>
   );
 };

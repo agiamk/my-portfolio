@@ -8,7 +8,7 @@ const Header: React.FC = () => {
 
   return (
     <Sheet>
-      <div className="flex p-6 justify-between items-center">
+      <div className="flex justify-between items-center">
         <h1>ポートフォリオ</h1>
         <nav className="flex justify-center items-center gap-7 underline underline-offset-2">
           {navItem.map((item) => (
