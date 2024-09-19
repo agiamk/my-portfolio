@@ -19,6 +19,38 @@ const About = () => {
           </p>
         </div>
       </div>
+      <h3 className="text-xl">Hobby</h3>
+      <div className="p-4">
+        <div>
+          <h4>楽器演奏（ギター/ベース）</h4>
+          <p>
+            高校時代はバンドを組んでおり、ベースを担当していました。大学に入ってからは一人で演奏しています。
+          </p>
+        </div>
+        <div>
+          <div>FUJIGEN ベース</div>
+          <img src="" alt="" />
+          {/* ベースの写真 */}
+        </div>
+        <div>
+          <div>YAMAHA PACIFIKA</div>
+          <img src="" alt="" />
+          {/* ギターの写真 */}
+        </div>
+      </div>
+      <div className="p-4">
+        <h4>海外サッカー観戦</h4>
+        <p>
+          最近見始めました。応援しているチームはブライトンです。プレミアリーグを現地で観戦することが夢です。
+        </p>
+      </div>
+      <div className="p-4">
+        <h4>お酒</h4>
+        <p>
+          最近はコンビニのワインを飲み比べるのみハマっています。社会人になったら高めのワインを飲んでみたいです。
+          <b>飲みの誘いは断りません。</b>
+        </p>
+      </div>
       <h3 className="text-xl">Skills</h3>
       <dl>
         <dt>HTML</dt>
