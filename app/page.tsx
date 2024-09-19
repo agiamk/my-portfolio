@@ -1,6 +1,7 @@
-import About from "./_components/About/About";
-import Blog from "./_components/Blog/Blog";
-import Header from "./_components/Header/Header";
+import About from "./_components/About";
+import Blog from "./_components/Blog";
+import Footer from "./_components/Footer";
+import Header from "./_components/Header";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <About />
       <Blog />
+      <Footer />
     </div>
   );
 }
