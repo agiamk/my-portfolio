@@ -6,13 +6,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/virtual";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Virtual } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
-type BlogListProps = {
+type blogListProps = {
   blogs: Blog[];
 };
 
-const BlogList = ({ blogs }: BlogListProps) => {
+const BlogList = ({ blogs }: blogListProps) => {
   if (blogs.length === 0) <p>記事がありません。</p>;
 
   const sliceBlogs = blogs.slice(0, 5);
@@ -30,7 +30,7 @@ const BlogList = ({ blogs }: BlogListProps) => {
         <SwiperSlide key={blog.id} className="w-10 bg-slate-100 p-3">
           <div>{blog.title}</div>
           <div>{blog.category.name}</div>
-          <div>{blog.published}</div>
+          <div>{blog.publishedAt}</div>
           <div>Read More</div>
         </SwiperSlide>
       ))}
