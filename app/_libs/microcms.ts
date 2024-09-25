@@ -7,6 +7,7 @@ import {
 
 export type Blog = {
   title: string;
+  description: string
   content: string;
   category: Category;
   thumbnail?: MicroCMSImage;

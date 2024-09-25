@@ -9,7 +9,7 @@ type blogLayoutProps = {
 const blogLayout = ({ children }: blogLayoutProps) => {
   return (
     <>
-      <Header />
+      <Header isScroll />
       <Sheet>{children}</Sheet>
     </>
   );
