@@ -1,5 +1,5 @@
 import { Blog } from "@/app/_libs/microcms";
-import React from "react";
+import Button from "../Button";
 
 type ArticleProps = {
   blog: Blog;
@@ -13,6 +13,7 @@ const Article = ({ blog }: ArticleProps) => {
       <div>
         <p>{blog.category.name}</p>
         <small>{blog.publishedAt ?? blog.createdAt}</small>
+        <Button>ブログの一覧を見る</Button>
       </div>
     </main>
   );
