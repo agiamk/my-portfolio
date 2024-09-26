@@ -5,7 +5,7 @@ import Sheet from "../Sheet";
 import Link from "next/link";
 
 type HeaderProps = {
-  isScroll: boolean;
+  isScroll?: boolean;
 };
 
 const Header = ({ isScroll = false }: HeaderProps) => {

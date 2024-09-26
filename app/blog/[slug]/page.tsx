@@ -10,7 +10,11 @@ type Props = {
 
 const Page = async ({ params }: Props) => {
   const data = await getBlogDetail(params.slug).catch(notFound);
-  return <Article blog={data} />;
+  return (
+    <div>
+      <Article blog={data} />
+    </div>
+  );
 };
 
 export default Page;
