@@ -32,7 +32,7 @@ const BlogSlide = ({ blogs }: blogListProps) => {
         {sliceBlogs.map((blog) => (
           <SwiperSlide
             key={blog.id}
-            className="bg-slate-100 flex-col"
+            className="bg-slate-100 flex-col w-auto"
             style={{
               height: "auto",
               display: "flex",
@@ -42,10 +42,14 @@ const BlogSlide = ({ blogs }: blogListProps) => {
               href={`/blog/${blog.id}`}
               className="cursor-pointer p-3 block"
             >
-              <div className="break-normal">{blog.title}</div>
+              <div className="break-words">{blog.title}</div>
               <div className="flex mt-2">
-                <div className="text-xs">{blog.category.name}</div>
-                <div className="text-xs">{formatDate(blog.publishedAt!)}</div>
+                <div className="text-xs relative pr-2 after:absolute after:border-r-2 after:top-0 after:right-0 after:border-r-indigo-100 after:h-full">
+                  {blog.category.name}
+                </div>
+                <div className="text-xs pl-1">
+                  {formatDate(blog.publishedAt!)}
+                </div>
               </div>
               <div className="mt-auto text-right">Read More</div>
             </Link>
