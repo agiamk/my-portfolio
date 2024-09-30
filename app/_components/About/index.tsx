@@ -4,13 +4,13 @@ import Sheet from "../Sheet";
 const About = () => {
   return (
     <Sheet bgBlack>
-      <div className="flex gap-60">
+      <div className="flex flex-col md:gap-60 md:flex-row">
         <h2 id="About" className="text-2xl whitespace-nowrap">
           About Me
         </h2>
-        <div>
+        <div className="pt-4 md:pt-0">
           <h3>鎌田大河/Taiga Kamada</h3>
-          <p>
+          <p className="pt-2">
             東北学院大学 教養学部 情報科学科3年生。
             <br />
             生まれ育ちともに宮城県です。大学ではJavaを使ったシステム開発やコンピューターサイエンスについて学んでいます。
@@ -19,7 +19,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <h3 className="text-xl">Hobby</h3>
+      <h3 className="text-xl pt-4 md:pt-0">Hobby</h3>
       <div className="p-4">
         <div>
           <h4>楽器演奏（ギター/ベース）</h4>
