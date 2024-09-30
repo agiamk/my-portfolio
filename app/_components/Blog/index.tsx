@@ -12,13 +12,19 @@ const Blog = async () => {
 
   return (
     <Sheet>
-      <div className="flex justify-between">
+      <div className="md:flex md:justify-between">
         <h2 className="text-2xl" id="Blog">
           Tech Blog
         </h2>
-        <Button>ブログの一覧を見る</Button>
+        <div className="text-right">
+          <Button>ブログの一覧を見る</Button>
+        </div>
       </div>
-      <BlogSlide blogs={blogs} />
+      {blogs.length === 0 ? (
+        <p>記事はありません</p>
+      ) : (
+        <BlogSlide blogs={blogs} />
+      )}
     </Sheet>
   );
 };
