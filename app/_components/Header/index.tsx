@@ -41,7 +41,10 @@ const Header = ({ isScroll = false }: HeaderProps) => {
         <h1>ポートフォリオ</h1>
         <div className="md:hidden">
           {openMenu ? (
-            <button onClick={toggleMenu} className="relative bg-black z-50">
+            <button
+              onClick={toggleMenu}
+              className="sticky top-8 right-8 bg-black z-50"
+            >
               <IconContext.Provider
                 value={{
                   size: "30px",
@@ -53,7 +56,10 @@ const Header = ({ isScroll = false }: HeaderProps) => {
               </IconContext.Provider>
             </button>
           ) : (
-            <button onClick={toggleMenu} className="relative z-50">
+            <button
+              onClick={toggleMenu}
+              className="absolute top-0 right-0 z-50"
+            >
               <IconContext.Provider
                 value={{
                   size: "30px",
@@ -64,14 +70,14 @@ const Header = ({ isScroll = false }: HeaderProps) => {
             </button>
           )}
         </div>
-        <nav className="hidden md:flex justify-center items-center gap-7 underline underline-offset-2">
+        <nav className="fixed top-0 right-0 z-20 p-6 pt-16 bg-white w-[calc(100vw_-_13rem)] h-full md:flex justify-center items-center gap-7 underline underline-offset-2">
           {isScroll
             ? navItem.map((item) => (
                 <Scroll
                   to={item.page}
                   smooth
                   key={item.page}
-                  className="cursor-pointer"
+                  className="cursor-pointer block p-2 m-2"
                 >
                   {item.page}
                 </Scroll>
@@ -80,7 +86,7 @@ const Header = ({ isScroll = false }: HeaderProps) => {
                 <Link
                   href={item.path}
                   key={item.page}
-                  className="cursor-pointer"
+                  className="cursor-pointer block"
                 >
                   {item.page}
                 </Link>
