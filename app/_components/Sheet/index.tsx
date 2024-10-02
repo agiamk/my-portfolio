@@ -1,5 +1,3 @@
-import React, { RefObject } from "react";
-
 type SheetProps = {
   children: React.ReactNode;
   bgBlack?: boolean;
