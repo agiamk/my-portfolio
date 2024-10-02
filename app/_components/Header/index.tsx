@@ -35,7 +35,7 @@ const Header = ({ isScroll = false }: HeaderProps) => {
   return (
     <Sheet>
       <header
-        className="relative flex justify-between items-center"
+        className="flex justify-between items-center"
         ref={headerHeightRef}
       >
         <h1>ポートフォリオ</h1>
@@ -43,7 +43,7 @@ const Header = ({ isScroll = false }: HeaderProps) => {
           {openMenu ? (
             <button
               onClick={toggleMenu}
-              className="sticky top-8 right-8 bg-black z-50"
+              className="fixed top-4 right-4 bg-black z-50"
             >
               <IconContext.Provider
                 value={{
@@ -58,7 +58,7 @@ const Header = ({ isScroll = false }: HeaderProps) => {
           ) : (
             <button
               onClick={toggleMenu}
-              className="absolute top-0 right-0 z-50"
+              className="absolute top-4 right-4 z-50"
             >
               <IconContext.Provider
                 value={{
@@ -70,7 +70,13 @@ const Header = ({ isScroll = false }: HeaderProps) => {
             </button>
           )}
         </div>
-        <nav className="fixed top-0 right-0 z-20 p-6 pt-16 bg-white w-[calc(100vw_-_13rem)] h-full md:flex justify-center items-center gap-7 underline underline-offset-2">
+        <nav
+          className={`${
+            openMenu
+              ? "fixed top-0 right-0 z-20 p-6 pt-16 bg-white w-[calc(100vw_-_13rem)] h-full"
+              : "hidden"
+          } md:flex justify-center items-center gap-7 underline underline-offset-2`}
+        >
           {isScroll
             ? navItem.map((item) => (
                 <Scroll
@@ -86,14 +92,17 @@ const Header = ({ isScroll = false }: HeaderProps) => {
                 <Link
                   href={item.path}
                   key={item.page}
-                  className="cursor-pointer block"
+                  className="cursor-pointer block p-2 m-2"
                 >
                   {item.page}
                 </Link>
               ))}
         </nav>
         {openMenu ? (
-          <div className="fixed bg-zinc-900 w-full h-full top-0 left-0 z-10 opacity-25 md:hidden"></div>
+          <div
+            className="fixed bg-zinc-900 w-full h-full top-0 left-0 z-10 opacity-25 md:hidden"
+            onClick={toggleMenu}
+          ></div>
         ) : null}
       </header>
     </Sheet>
