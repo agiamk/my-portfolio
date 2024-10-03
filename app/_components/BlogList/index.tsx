@@ -1,10 +1,11 @@
-import { Blog } from "@/app/_libs/microcms";
+import { BlogType } from "@/app/_libs/microcms";
 import { formatDate } from "@/app/_libs/utils";
 import Image from "next/image";
 import Link from "next/link";
+import Category from "../Category";
 
 type BlogListProps = {
-  blogs: Blog[];
+  blogs: BlogType[];
 };
 
 const BlogList = ({ blogs }: BlogListProps) => {
@@ -20,10 +21,12 @@ const BlogList = ({ blogs }: BlogListProps) => {
         >
           <div>
             <div className="text-lg font-semibold">{blog.title}</div>
-            <div>{blog.description}</div>
-            <div>
-              <div>{blog.category.name}</div>
-              <div>{formatDate(blog.updatedAt ?? blog.publishedAt)}</div>
+            <div className="mt-2">{blog.description}</div>
+            <div className="flex items-center gap-2 mt-2">
+              <Category category={blog.category} />
+              <div>
+                最終更新：{formatDate(blog.updatedAt ?? blog.publishedAt)}
+              </div>
             </div>
             {blog.thumbnail ? <Image src={blog.thumbnail.url} alt="" /> : null}
           </div>
