@@ -1,6 +1,6 @@
 "use client";
 
-import { Blog } from "@/app/_libs/microcms";
+import { BlogType } from "@/app/_libs/microcms";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -11,7 +11,7 @@ import { formatDate } from "@/app/_libs/utils";
 import Link from "next/link";
 
 type blogListProps = {
-  blogs: Blog[];
+  blogs: BlogType[];
 };
 
 const BlogSlide = ({ blogs }: blogListProps) => {

@@ -78,25 +78,31 @@ const Header = ({ isScroll = false }: HeaderProps) => {
           } md:flex justify-center items-center gap-7 underline underline-offset-2`}
         >
           {isScroll
-            ? navItem.map((item) => (
-                <Scroll
-                  to={item.page}
-                  smooth
-                  key={item.page}
-                  className="cursor-pointer block p-2 m-2"
-                >
-                  {item.page}
-                </Scroll>
-              ))
-            : navItem.map((item) => (
-                <Link
-                  href={item.path}
-                  key={item.page}
-                  className="cursor-pointer block p-2 m-2"
-                >
-                  {item.page}
-                </Link>
-              ))}
+            ? navItem.map((item) => {
+                return item.page === "Portfolio" ? null : (
+                  <Scroll
+                    to={item.page}
+                    smooth
+                    key={item.page}
+                    className="cursor-pointer block p-2 m-2"
+                    onClick={toggleMenu}
+                  >
+                    {item.page}
+                  </Scroll>
+                );
+              })
+            : navItem.map((item) => {
+                return item.page === "Portfolio" ? null : (
+                  <Link
+                    href={item.path}
+                    key={item.page}
+                    className="cursor-pointer block p-2 m-2"
+                    onClick={toggleMenu}
+                  >
+                    {item.page}
+                  </Link>
+                );
+              })}
         </nav>
         {openMenu ? (
           <div

@@ -5,15 +5,15 @@ import {
   MicroCMSQueries,
 } from "microcms-js-sdk";
 
-export type Blog = {
+export type BlogType = {
   title: string;
-  description: string
+  description: string;
   content: string;
-  category: Category;
+  category: CategoryType;
   thumbnail?: MicroCMSImage;
 } & MicroCMSListContent;
 
-export type Category = {
+export type CategoryType = {
   name: string;
 } & MicroCMSListContent;
 
@@ -31,7 +31,7 @@ const client = createClient({
 });
 
 export const getBlogList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Blog>({
+  const listData = await client.getList<BlogType>({
     endpoint: "blog",
     queries,
   });
@@ -42,7 +42,7 @@ export const getBlogDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
 ) => {
-  const detailData = await client.getListDetail<Blog>({
+  const detailData = await client.getListDetail<BlogType>({
     endpoint: "blog",
     contentId,
     queries,
