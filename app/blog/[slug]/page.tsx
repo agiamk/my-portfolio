@@ -6,10 +6,15 @@ type Props = {
   params: {
     slug: string;
   };
+  searchParams: {
+    draftkey?: string;
+  };
 };
 
-const Page = async ({ params }: Props) => {
-  const data = await getparsedBlogDetail(params.slug).catch(notFound);
+const Page = async ({ params, searchParams }: Props) => {
+  const data = await getparsedBlogDetail(params.slug, {
+    draftKey: searchParams.draftkey,
+  }).catch(notFound);
   return (
     <div>
       <Article blog={data} />
