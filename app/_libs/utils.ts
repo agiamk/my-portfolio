@@ -4,6 +4,7 @@ import timezone from "dayjs/plugin/timezone";
 import { getBlogDetail } from "./microcms";
 import hljs, { HighlightResult } from "highlight.js";
 import { load } from "cheerio";
+import { MicroCMSQueries } from "microcms-js-sdk";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -12,8 +13,11 @@ export const formatDate = (date: string) => {
   return dayjs.utc(date).tz("Asia/Tokyo").format("YYYY/MM/DD");
 };
 
-export const getparsedBlogDetail = async (contentId: string) => {
-  const detailBlog = await getBlogDetail(contentId);
+export const getparsedBlogDetail = async (
+  contentId: string,
+  queries: MicroCMSQueries
+) => {
+  const detailBlog = await getBlogDetail(contentId, queries);
 
   const $ = load(detailBlog.content);
 
