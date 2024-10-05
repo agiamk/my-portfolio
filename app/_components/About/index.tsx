@@ -27,12 +27,12 @@ const About = () => {
         </div>
         <div>
           <div>FUJIGEN ベース</div>
-          <img src="" alt="" />
+
           {/* ベースの写真 */}
         </div>
         <div>
           <div>YAMAHA PACIFIKA</div>
-          <img src="" alt="" />
+
           {/* ギターの写真 */}
         </div>
       </div>
