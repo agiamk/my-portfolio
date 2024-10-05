@@ -15,7 +15,7 @@ export const formatDate = (date: string) => {
 
 export const getparsedBlogDetail = async (
   contentId: string,
-  queries: MicroCMSQueries
+  queries?: MicroCMSQueries
 ) => {
   const detailBlog = await getBlogDetail(contentId, queries);
 
