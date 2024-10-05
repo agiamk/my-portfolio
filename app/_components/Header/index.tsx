@@ -10,9 +10,10 @@ import { MdOutlineClose } from "react-icons/md";
 
 type HeaderProps = {
   isScroll?: boolean;
+  isTopPage?: boolean;
 };
 
-const Header = ({ isScroll = false }: HeaderProps) => {
+const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const navItem = [
@@ -29,7 +30,11 @@ const Header = ({ isScroll = false }: HeaderProps) => {
   return (
     <Sheet>
       <header className="flex justify-between items-center">
-        <h1>ポートフォリオ</h1>
+        {isTopPage ? (
+          <h1 className="text-xl font-bold">PORTFOLIO</h1>
+        ) : (
+          <div className="text-xl font-bold">PORTFOLIO</div>
+        )}
         <div className="md:hidden">
           {openMenu ? (
             <button
