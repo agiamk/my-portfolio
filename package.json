@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "cheerio": "^1.0.0",
     "dayjs": "^1.11.13",
+    "highlight.js": "^11.10.0",
     "microcms-js-sdk": "^3.1.2",
     "next": "14.2.11",
     "react": "^18",
