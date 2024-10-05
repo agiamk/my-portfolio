@@ -2,6 +2,7 @@ import { BlogType } from "@/app/_libs/microcms";
 import Button from "../Button";
 import { formatDate } from "@/app/_libs/utils";
 import Category from "../Category";
+import "highlight.js/styles/a11y-dark.css";
 
 type ArticleProps = {
   blog: BlogType;

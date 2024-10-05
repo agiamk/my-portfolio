@@ -1,3 +1,5 @@
+import { load } from "cheerio";
+import hljs, { HighlightResult } from "highlight.js";
 import {
   createClient,
   MicroCMSImage,
@@ -47,5 +49,6 @@ export const getBlogDetail = async (
     contentId,
     queries,
   });
+
   return detailData;
 };

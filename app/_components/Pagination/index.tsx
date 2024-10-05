@@ -4,9 +4,10 @@ import React from "react";
 
 type PaginationProps = {
   totalCount: number;
+  current?: number;
 };
 
-const Pagination = ({ totalCount }: PaginationProps) => {
+const Pagination = ({ totalCount, current = 1 }: PaginationProps) => {
   const pages = Array.from(
     {
       length: Math.ceil(totalCount / BLOG_LIST_LIMIT),
@@ -15,11 +16,15 @@ const Pagination = ({ totalCount }: PaginationProps) => {
   );
   console.log(pages);
   return (
-    <nav className="text-center mt-5">
-      <ul>
+    <nav className="mt-5">
+      <ul className="flex justify-center items-center gap-2">
         {pages.map((p) => (
           <li key={p}>
-            <Link href={`/blog/p/${p}`}>{p}</Link>
+            {current === p ? (
+              <span className="bg-black text-white p-1 rounded-sm">{p}</span>
+            ) : (
+              <Link href={`/blog/p/${p}`}>{p}</Link>
+            )}
           </li>
         ))}
       </ul>

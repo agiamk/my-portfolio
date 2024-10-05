@@ -5,7 +5,7 @@ import Sheet from "../Sheet";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
 
 type HeaderProps = {
@@ -14,7 +14,6 @@ type HeaderProps = {
 
 const Header = ({ isScroll = false }: HeaderProps) => {
   const [openMenu, setOpenMenu] = useState(false);
-  const headerHeightRef = useRef<HTMLElement>(null);
 
   const navItem = [
     { page: "Home", path: "/" },
@@ -23,21 +22,13 @@ const Header = ({ isScroll = false }: HeaderProps) => {
     { page: "Blog", path: "/blog" },
   ];
 
-  useEffect(() => {
-    if (!headerHeightRef.current) throw Error("headerRef is not assigned");
-    console.log(headerHeightRef.current.offsetHeight);
-  }, []);
-
   const toggleMenu = () => {
     setOpenMenu((prev) => !prev);
   };
 
   return (
     <Sheet>
-      <header
-        className="flex justify-between items-center"
-        ref={headerHeightRef}
-      >
+      <header className="flex justify-between items-center">
         <h1>ポートフォリオ</h1>
         <div className="md:hidden">
           {openMenu ? (
@@ -85,7 +76,7 @@ const Header = ({ isScroll = false }: HeaderProps) => {
                     smooth
                     key={item.page}
                     className="cursor-pointer block p-2 m-2"
-                    onClick={toggleMenu}
+                    onClick={() => setOpenMenu(false)}
                   >
                     {item.page}
                   </Scroll>
@@ -97,7 +88,7 @@ const Header = ({ isScroll = false }: HeaderProps) => {
                     href={item.path}
                     key={item.page}
                     className="cursor-pointer block p-2 m-2"
-                    onClick={toggleMenu}
+                    onClick={() => setOpenMenu(false)}
                   >
                     {item.page}
                   </Link>
