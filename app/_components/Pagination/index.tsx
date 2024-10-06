@@ -14,7 +14,6 @@ const Pagination = ({ totalCount, current = 1 }: PaginationProps) => {
     },
     (_, i) => i + 1
   );
-  console.log(pages);
   return (
     <nav className="mt-5">
       <ul className="flex justify-center items-center gap-2">

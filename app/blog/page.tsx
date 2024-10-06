@@ -12,8 +12,10 @@ const Page = async () => {
   return (
     <div>
       <h1 className="text-2xl font-bold text-center">Tech Blog</h1>
-      <BlogList blogs={blogs} />
-      <Pagination totalCount={totalCount} />
+      <div className="pt-4">
+        <BlogList blogs={blogs} />
+        <Pagination totalCount={totalCount} />
+      </div>
     </div>
   );
 };

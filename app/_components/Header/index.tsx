@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
 import { useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
+import { RxOpenInNewWindow } from "react-icons/rx";
 
 type HeaderProps = {
   isScroll?: boolean;
@@ -33,7 +34,9 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
         {isTopPage ? (
           <h1 className="text-xl font-bold">PORTFOLIO</h1>
         ) : (
-          <div className="text-xl font-bold">PORTFOLIO</div>
+          <Link href="/" className="text-xl font-bold">
+            PORTFOLIO
+          </Link>
         )}
         <div className="md:hidden">
           {openMenu ? (
@@ -73,8 +76,9 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
               : "hidden"
           } md:flex justify-center items-center gap-7 underline underline-offset-2`}
         >
-          {isScroll
-            ? navItem.map((item) => {
+          {isScroll ? (
+            <>
+              {navItem.map((item) => {
                 return item.page === "Portfolio" ? null : (
                   <Scroll
                     to={item.page}
@@ -86,8 +90,19 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
                     {item.page}
                   </Scroll>
                 );
-              })
-            : navItem.map((item) => {
+              })}
+              <Link
+                href="https://github.com/agiamk"
+                target="_blank"
+                className="cursor-pointer p-2 m-2"
+              >
+                GitHub
+                <RxOpenInNewWindow className="inline-block" />
+              </Link>
+            </>
+          ) : (
+            <>
+              {navItem.map((item) => {
                 return item.page === "Portfolio" ? null : (
                   <Link
                     href={item.path}
@@ -99,6 +114,16 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
                   </Link>
                 );
               })}
+              <Link
+                href="https://github.com/agiamk"
+                target="_blank"
+                className="cursor-pointer p-2 m-2"
+              >
+                GitHub
+                <RxOpenInNewWindow className="inline-block" />
+              </Link>
+            </>
+          )}
         </nav>
         {openMenu ? (
           <div
