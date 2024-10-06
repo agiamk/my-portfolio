@@ -43,6 +43,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
             <button
               onClick={toggleMenu}
               className="fixed top-4 right-4 bg-black z-50"
+              aria-label="メニューを開く"
             >
               <IconContext.Provider
                 value={{
@@ -58,6 +59,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
             <button
               onClick={toggleMenu}
               className="absolute top-4 right-4 z-50"
+              aria-label="メニューを開く"
             >
               <IconContext.Provider
                 value={{
