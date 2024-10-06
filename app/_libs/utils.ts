@@ -13,7 +13,7 @@ export const formatDate = (date: string) => {
   return dayjs.utc(date).tz("Asia/Tokyo").format("YYYY/MM/DD");
 };
 
-export const getparsedBlogDetail = async (
+export const getParsedBlogDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
 ) => {

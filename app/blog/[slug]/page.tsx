@@ -1,6 +1,6 @@
 import Article from "@/app/_components/Article";
 import { notFound } from "next/navigation";
-import { getparsedBlogDetail } from "@/app/_libs/utils";
+import { getParsedBlogDetail } from "@/app/_libs/utils";
 
 type Props = {
   params: {
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Page = async ({ params, searchParams }: Props) => {
-  const data = await getparsedBlogDetail(params.slug, {
+  const data = await getParsedBlogDetail(params.slug, {
     draftKey: searchParams.draftkey,
   }).catch(notFound);
   return (
