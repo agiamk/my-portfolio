@@ -46,6 +46,11 @@ export const getBlogDetail = async (
     endpoint: "blog",
     contentId,
     queries,
+    customRequestInit: {
+      next: {
+        revalidate: queries?.draftKey === undefined ? 60 : 0,
+      },
+    },
   });
 
   return detailData;
