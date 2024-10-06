@@ -17,7 +17,7 @@ type blogListProps = {
 const BlogSlide = ({ blogs }: blogListProps) => {
   if (blogs.length === 0) <p>記事がありません。</p>;
 
-  const sliceBlogs = blogs.slice(0, 5);
+  const sliceBlogs = blogs.slice(0, 7);
 
   return (
     <div className="m-4">
