@@ -17,8 +17,6 @@ type blogListProps = {
 const BlogSlide = ({ blogs }: blogListProps) => {
   if (blogs.length === 0) <p>記事がありません。</p>;
 
-  const sliceBlogs = blogs.slice(0, 7);
-
   return (
     <div className="m-4">
       <Swiper
@@ -43,14 +41,14 @@ const BlogSlide = ({ blogs }: blogListProps) => {
           },
         }}
       >
-        {sliceBlogs.map((blog) => (
+        {blogs.map((blog) => (
           <SwiperSlide
             key={blog.id}
             className="bg-slate-100 flex-col"
             style={{
               height: "auto",
               display: "flex",
-            }} //swiperライブラリのheightが優先されるためインラインで記述
+            }} //swiperライブラリのスタイルが優先されるためインラインで記述
           >
             <Link
               href={`/blog/${blog.id}`}
