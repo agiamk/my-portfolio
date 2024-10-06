@@ -39,7 +39,6 @@ export const getparsedBlogDetail = async (
       result = hljs.highlight($(elm).text(), {
         language: language.replace("language-", ""),
       });
-      console.log(result.value);
     }
     $(elm).html(result.value);
     $(elm).addClass("hljs");

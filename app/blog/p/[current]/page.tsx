@@ -25,8 +25,11 @@ const Page = async ({ params }: Props) => {
 
   return (
     <div>
-      <BlogList blogs={blogs} />
-      <Pagination totalCount={totalCount} current={current} />
+      <h1 className="text-2xl font-bold text-center">Tech Blog</h1>
+      <div className="pt-4">
+        <BlogList blogs={blogs} />
+        <Pagination totalCount={totalCount} current={current} />
+      </div>
     </div>
   );
 };
