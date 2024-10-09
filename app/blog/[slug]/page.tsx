@@ -18,6 +18,7 @@ const Page = async ({ params, searchParams }: Props) => {
   const data = await getParsedBlogDetail(params.slug, {
     draftKey: searchParams.draftkey,
   }).catch(notFound);
+  
   return (
     <div>
       <Article blog={data} />

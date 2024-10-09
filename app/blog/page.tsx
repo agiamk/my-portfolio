@@ -1,4 +1,3 @@
-import React from "react";
 import { getBlogList } from "../_libs/microcms";
 import BlogList from "../_components/BlogList";
 import { BLOG_LIST_LIMIT } from "../_constants";

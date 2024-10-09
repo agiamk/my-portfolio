@@ -35,7 +35,7 @@ const Page = async ({ params }: Props) => {
 };
 
 export async function generateStaticParams() {
-  const { contents: blogs } = await getBlogList({});
+  const { contents: blogs } = await getBlogList();
 
   const staticPaths = blogs.map((blog) => ({ id: blog.id }));
 
