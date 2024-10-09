@@ -1,7 +1,6 @@
 import Article from "@/app/_components/Article";
 import { notFound } from "next/navigation";
 import { getParsedBlogDetail } from "@/app/_libs/utils";
-import { getBlogList } from "@/app/_libs/microcms";
 
 export const dynamic = "force-dynamic";
 
@@ -26,12 +25,12 @@ const Page = async ({ params, searchParams }: Props) => {
   );
 };
 
-export async function generateStaticParams() {
-  const { contents: blogs } = await getBlogList({});
+// export async function generateStaticParams() {
+//   const { contents: blogs } = await getBlogList({});
 
-  const staticPaths = blogs.map((blog) => ({ id: blog.id }));
+//   const staticPaths = blogs.map((blog) => ({ id: blog.id }));
 
-  return staticPaths;
-}
+//   return staticPaths;
+// }
 
 export default Page;
