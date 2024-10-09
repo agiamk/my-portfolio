@@ -1,6 +1,7 @@
 import Article from "@/app/_components/Article";
 import { notFound } from "next/navigation";
 import { getParsedBlogDetail } from "@/app/_libs/utils";
+import { getBlogList } from "@/app/_libs/microcms";
 
 type Props = {
   params: {
@@ -21,5 +22,13 @@ const Page = async ({ params, searchParams }: Props) => {
     </div>
   );
 };
+
+export async function generateStaticParams() {
+  const { contents: blogs } = await getBlogList({});
+
+  const staticPaths = blogs.map((blog) => ({ id: blog.id }));
+
+  return staticPaths;
+}
 
 export default Page;
