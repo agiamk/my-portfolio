@@ -15,4 +15,6 @@ const blogLayout = ({ children }: blogLayoutProps) => {
   );
 };
 
+export const revalidate = 600;
+
 export default blogLayout;
