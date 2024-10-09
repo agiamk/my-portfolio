@@ -26,12 +26,12 @@ const Page = async ({ params, searchParams }: Props) => {
   );
 };
 
-export async function generateStaticParams() {
-  const { contents: blogs } = await getBlogList({});
+// export async function generateStaticParams() {
+//   const { contents: blogs } = await getBlogList({});
 
-  const staticPaths = blogs.map((blog) => ({ id: blog.id }));
+//   const staticPaths = blogs.map((blog) => ({ id: blog.id }));
 
-  return staticPaths;
-}
+//   return staticPaths;
+// }
 
 export default Page;
