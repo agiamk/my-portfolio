@@ -17,12 +17,12 @@ const BlogList = ({ blogs }: BlogListProps) => {
         <Link
           href={`/blog/${blog.id}`}
           key={blog.id}
-          className="border block p-4 mt-4 max-w-xl mx-auto"
+          className="mx-auto mt-4 block max-w-xl border p-4"
         >
           <div>
             <div className="text-lg font-semibold">{blog.title}</div>
             <div className="mt-2">{blog.description}</div>
-            <div className="flex items-center gap-2 mt-2">
+            <div className="mt-2 flex items-center gap-2">
               <Category category={blog.category} />
               <div>
                 最終更新：{formatDate(blog.updatedAt ?? blog.publishedAt)}

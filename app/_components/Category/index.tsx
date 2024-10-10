@@ -5,7 +5,7 @@ type CategoryProps = {
 };
 
 const Category = ({ category }: CategoryProps) => {
-  return <p className="bg-slate-300 p-1 inline-block">{category.name}</p>;
+  return <p className="inline-block bg-slate-300 p-1">{category.name}</p>;
 };
 
 export default Category;
