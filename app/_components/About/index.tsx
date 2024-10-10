@@ -4,8 +4,8 @@ import Sheet from "../Sheet";
 const About = () => {
   return (
     <Sheet bgBlack>
-      <div className="flex flex-col md:gap-60 md:flex-row">
-        <h2 id="About" className="text-2xl whitespace-nowrap">
+      <div className="flex flex-col md:flex-row md:gap-60">
+        <h2 id="About" className="whitespace-nowrap text-2xl">
           About Me
         </h2>
         <div className="pt-4 md:pt-0">
@@ -20,7 +20,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <h3 className="text-xl pt-4">Hobby</h3>
+      <h3 className="pt-4 text-xl">Hobby</h3>
       <div className="p-4">
         <div>
           <h4>楽器演奏（ギター/ベース）</h4>
@@ -49,7 +49,7 @@ const About = () => {
           最近はコンビニのワインを飲み比べるのみハマっています。社会人になったら高めのワインを飲んでみたいです。
         </p>
       </div>
-      <h3 className="text-xl pt-4">Skills</h3>
+      <h3 className="pt-4 text-xl">Skills</h3>
       <div className="p-4">
         <h4>HTML/CSS</h4>
         <p>

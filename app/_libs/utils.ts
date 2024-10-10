@@ -13,9 +13,9 @@ export const formatDate = (date: string) => {
   return dayjs.utc(date).tz("Asia/Tokyo").format("YYYY/MM/DD");
 };
 
-export const getParsedBlogDetail = async (
+export const getstyledBlogDetail = async (
   contentId: string,
-  queries?: MicroCMSQueries
+  queries?: MicroCMSQueries,
 ) => {
   const detailBlog = await getBlogDetail(contentId, queries);
 
@@ -44,6 +44,18 @@ export const getParsedBlogDetail = async (
     $(elm).addClass("hljs");
   });
 
+  $("h2").addClass(
+    "text-2xl font-bold border-gray-600 p-2 pl-4 mt-7 mb-6 bg-slate-200",
+  );
+  $("h3").addClass(
+    "text-xl font-bold border-gray-600 border-l-4 pl-4 mt-6 mb-5",
+  );
+  $("h4").addClass("font-bold text-lg mt-5 mb-4");
+  $("a").addClass("underline hover:text-purple-800");
+  $("li").addClass("list-disc ml-8");
+  $(".newWindowLink").append(
+    "<span class='w-4 h-4 inline-block ml-1 align-middle'><img src='/otherWindow.svg' alt='別窓で開く'></span>",
+  );
   // 編集したHTMLを再設定
   detailBlog.content = $.html();
   return detailBlog;

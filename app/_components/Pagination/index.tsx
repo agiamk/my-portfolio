@@ -12,15 +12,15 @@ const Pagination = ({ totalCount, current = 1 }: PaginationProps) => {
     {
       length: Math.ceil(totalCount / BLOG_LIST_LIMIT),
     },
-    (_, i) => i + 1
+    (_, i) => i + 1,
   );
   return (
     <nav className="mt-5">
-      <ul className="flex justify-center items-center gap-2">
+      <ul className="flex items-center justify-center gap-2">
         {pages.map((p) => (
           <li key={p}>
             {current === p ? (
-              <span className="bg-black text-white p-1 rounded-sm">{p}</span>
+              <span className="rounded-sm bg-black p-1 text-white">{p}</span>
             ) : (
               <Link href={`/blog/p/${p}`}>{p}</Link>
             )}

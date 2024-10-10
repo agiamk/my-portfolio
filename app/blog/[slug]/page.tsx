@@ -1,6 +1,6 @@
 import Article from "@/app/_components/Article";
 import { notFound } from "next/navigation";
-import { getParsedBlogDetail } from "@/app/_libs/utils";
+import { getstyledBlogDetail } from "@/app/_libs/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -14,10 +14,10 @@ type Props = {
 };
 
 const Page = async ({ params, searchParams }: Props) => {
-  const data = await getParsedBlogDetail(params.slug, {
+  const data = await getstyledBlogDetail(params.slug, {
     draftKey: searchParams.draftkey,
   }).catch(notFound);
-  
+
   return (
     <div>
       <Article blog={data} />

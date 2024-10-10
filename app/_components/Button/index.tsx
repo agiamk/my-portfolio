@@ -9,7 +9,7 @@ const Button = ({ children }: ButtonProps) => {
     <div className="inline-block">
       <Link
         href="/blog"
-        className="underline p-2 flex items-center justify-center"
+        className="flex items-center justify-center p-2 underline"
       >
         {children}
         <svg
