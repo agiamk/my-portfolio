@@ -50,7 +50,12 @@ export const getstyledBlogDetail = async (
   $("h3").addClass(
     "text-xl font-bold border-gray-600 border-l-4 pl-4 mt-6 mb-5",
   );
-
+  $("h4").addClass("font-bold text-lg mt-5 mb-4");
+  $("a").addClass("underline hover:text-purple-800");
+  $("li").addClass("list-disc ml-8");
+  $(".newWindowLink").append(
+    "<span class='w-4 h-4 inline-block ml-1 align-middle'><img src='/otherWindow.svg' alt='別窓で開く'></span>",
+  );
   // 編集したHTMLを再設定
   detailBlog.content = $.html();
   return detailBlog;
