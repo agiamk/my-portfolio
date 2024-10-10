@@ -20,6 +20,9 @@ const BlogSlide = ({ blogs }: blogListProps) => {
   return (
     <div className="m-4">
       <Swiper
+        style={{
+          paddingBottom: "40px",
+        }} //swiperのスタイルが優先されるためインラインで記載
         pagination={{
           clickable: true,
         }}

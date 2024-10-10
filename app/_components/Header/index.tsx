@@ -74,7 +74,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
         <nav
           className={`${
             openMenu
-              ? "fixed top-0 right-0 z-20 p-6 pt-16 bg-white w-[calc(100vw_-_13rem)] h-full"
+              ? "fixed top-0 right-0 z-20 p-6 pt-16 bg-white w-2/5 h-full"
               : "hidden"
           } md:flex justify-center items-center gap-7 underline underline-offset-2`}
         >
