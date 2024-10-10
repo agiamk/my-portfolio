@@ -3,7 +3,6 @@ import Pagination from "@/app/_components/Pagination";
 import { BLOG_LIST_LIMIT } from "@/app/_constants";
 import { getBlogList } from "@/app/_libs/microcms";
 import { notFound } from "next/navigation";
-import React from "react";
 
 type Props = {
   params: {
