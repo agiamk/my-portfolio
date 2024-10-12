@@ -59,6 +59,7 @@ export const getstyledBlogDetail = async (
   $(".newWindowLink").append(
     "<span class='w-4 h-4 inline-block ml-1 align-middle'><img src='/otherWindow.svg' alt='別窓で開く'></span>",
   );
+
   // 編集したHTMLを再設定
   detailBlog.content = $.html();
   return detailBlog;
