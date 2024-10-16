@@ -47,16 +47,18 @@ export const getstyledBlogDetail = async (
   $("h2").addClass(
     "text-2xl font-bold border-gray-600 p-2 pl-4 mt-7 mb-6 bg-slate-200",
   );
+  $("h2 + *").addClass("mt-9");
   $("h3").addClass(
-    "text-xl font-bold border-gray-600 border-l-4 pl-4 mt-6 mb-5",
+    "text-xl font-bold border-gray-600 border-l-4 pl-4 mt-7 mb-5",
   );
+  $("h3 + *").addClass("mt-7");
   $("h4").addClass("font-bold text-lg mt-5 mb-4");
   $("p").addClass("mt-4 mb-2");
   $("a").addClass("underline hover:text-purple-800");
   $("ul").addClass("pt-4");
   $("li > ul").addClass("pt-0");
   $("li").addClass("list-disc ml-8");
-  $(".newWindowLink").append(
+  $("a[target=_blank]").append(
     "<span class='w-4 h-4 inline-block ml-1 align-middle'><img src='/otherWindow.svg' alt='別窓で開く'></span>",
   );
 
