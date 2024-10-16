@@ -20,7 +20,7 @@ const BlogList = ({ blogs }: BlogListProps) => {
           className="mx-auto mt-4 block max-w-xl border p-4"
         >
           <div>
-            <div className="text-lg font-semibold">{blog.title}</div>
+            <h2 className="text-lg font-semibold">{blog.title}</h2>
             <div className="mt-2">{blog.description}</div>
             <div className="mt-2 flex items-center gap-2">
               <Category category={blog.category} />
