@@ -25,12 +25,15 @@ const Page = async ({ params, searchParams }: Props) => {
   );
 };
 
-// export async function generateStaticParams() {
-//   const { contents: blogs } = await getBlogList({});
-
-//   const staticPaths = blogs.map((blog) => ({ id: blog.id }));
-
-//   return staticPaths;
-// }
-
 export default Page;
+
+export const generateMetadata = async ({ params, searchParams }: Props) => {
+  const data = await getstyledBlogDetail(params.slug, {
+    draftKey: searchParams?.draftkey,
+  }).catch(notFound);
+
+  return {
+    title: data.title,
+    description: `${data.title}のブログページです。`,
+  };
+};
