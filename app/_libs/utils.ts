@@ -67,6 +67,10 @@ export const getstyledBlogDetail = async (
   $("strong").addClass("text-gray-500");
   $("div[data-filename]").addClass("mt-7");
   $("table").addClass("mt-7 border-collapse border-slate-500");
+  $("th").addClass("border border-slate-500 bg-slate-300 p-4");
+  $("th p:first-child").addClass("mt-0 mb-0");
+  $("td").addClass("border border-slate-500 p-3");
+  $("td p:first-child").addClass("mt-0 mb-0");
 
   // 編集したHTMLを再設定
   detailBlog.content = $.html();
