@@ -66,6 +66,7 @@ export const getstyledBlogDetail = async (
   );
   $("strong").addClass("text-gray-500");
   $("div[data-filename]").addClass("mt-7");
+  $("table").addClass("mt-7 border-collapse border-slate-500");
 
   // 編集したHTMLを再設定
   detailBlog.content = $.html();
