@@ -44,6 +44,10 @@ export const getstyledBlogDetail = async (
     $(elm).addClass("hljs");
   });
 
+  $("code").each((_, elm) => {
+    $(elm).addClass("hljs");
+  });
+
   $("h2").addClass(
     "text-2xl font-bold border-gray-600 p-2 pl-4 mt-14 mb-6 bg-slate-200",
   );
@@ -68,9 +72,10 @@ export const getstyledBlogDetail = async (
   $("div[data-filename]").addClass("mt-7");
   $("table").addClass("mt-7 border-collapse border-slate-500");
   $("th").addClass("border border-slate-500 bg-slate-300 p-4");
-  $("th p:first-child").addClass("mt-0 mb-0");
+  $("th p:first-child").addClass("mt-4 mb-2");
   $("td").addClass("border border-slate-500 p-3");
-  $("td p:first-child").addClass("mt-0 mb-0");
+  $("td p:first-child").removeClass("mt-4 mb-2");
+  $(".iframely-embed").addClass("mt-7");
 
   // 編集したHTMLを再設定
   detailBlog.content = $.html();
