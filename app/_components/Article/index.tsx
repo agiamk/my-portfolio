@@ -1,14 +1,29 @@
+"use client";
+
 import { BlogType } from "@/app/_libs/microcms";
 import Button from "../Button";
 import { formatDate } from "@/app/_libs/utils";
 import Category from "../Category";
 import "highlight.js/styles/a11y-dark.css";
+import { useEffect } from "react";
 
 type ArticleProps = {
   blog: BlogType;
 };
 
 const Article = ({ blog }: ArticleProps) => {
+  //microcmsの外部サイト埋め込み機能を使うためのscriptを読み込む
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//cdn.iframe.ly/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <main>
       <div className="flex items-center justify-end gap-4">
