@@ -63,7 +63,7 @@ const BlogSlide = ({ blogs }: blogListProps) => {
                   {blog.category.name}
                 </div>
                 <div className="pl-1 text-xs">
-                  {formatDate(blog.publishedAt!)}
+                  {formatDate(blog.updatedAt ?? blog.publishedAt)}
                 </div>
               </div>
               <div className="mt-auto text-right">Read More</div>

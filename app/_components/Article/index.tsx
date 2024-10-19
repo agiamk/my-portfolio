@@ -14,7 +14,7 @@ const Article = ({ blog }: ArticleProps) => {
       <div className="flex items-center justify-end gap-4">
         <Category category={blog.category} />
         <time>
-          最終更新日：{formatDate(blog.publishedAt ?? blog.createdAt)}
+          最終更新日：{formatDate(blog.updatedAt ?? blog.publishedAt)}
         </time>
       </div>
       <h1 className="mt-4 text-2xl font-bold">{blog.title}</h1>
