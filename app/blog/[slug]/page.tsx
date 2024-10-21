@@ -14,13 +14,12 @@ type Props = {
 };
 
 const Page = async ({ params, searchParams }: Props) => {
-  const data = await getstyledBlogDetail(params.slug, {
-    draftKey: searchParams.draftkey,
-  }).catch(notFound);
+  const blogId = params.slug;
+  const draftKey = searchParams.draftkey;
 
   return (
     <div>
-      <Article blog={data} />
+      <Article blogId={blogId} draftKey={draftKey} />
     </div>
   );
 };
