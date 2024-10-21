@@ -33,13 +33,14 @@ export const getstyledBlogDetail = async (
 
     if (language == "") {
       // 言語が入力なしの場合、言語を自動判定
-      result = hljs.highlightAuto($(elm).text());
+      return;
     } else {
       // 言語が入力ありの場合、入力された言語で判定
       result = hljs.highlight($(elm).text(), {
         language: language.replace("language-", ""),
       });
     }
+
     $(elm).html(result.value);
     $(elm).addClass("hljs");
   });
