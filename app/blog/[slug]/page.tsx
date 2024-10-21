@@ -1,5 +1,3 @@
-"use client";
-
 import Article from "@/app/_components/Article";
 import { notFound } from "next/navigation";
 import { getstyledBlogDetail } from "@/app/_libs/utils";
@@ -22,7 +20,7 @@ const Page = async ({ params, searchParams }: Props) => {
 
   useEffect(() => {
     const getData = async () => {
-      let _data = await getstyledBlogDetail(params.slug, {
+      const _data = await getstyledBlogDetail(params.slug, {
         draftKey: searchParams.draftkey,
       }).catch(notFound);
       setData(_data);
