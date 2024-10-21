@@ -32,7 +32,8 @@ export const getstyledBlogDetail = async (
     let result: HighlightResult;
 
     if (language == "") {
-      // 言語が入力なしの場合、言語を自動判定
+      //言語を指定しないhighlightAutoを使うとと以下のエラーが発生する。正規表現周りだが細かい原因不明。
+      //SyntaxError: Invalid regular expression: /0[oO](([0-7]_*)+)/mu: Invalid escape
       return;
     } else {
       // 言語が入力ありの場合、入力された言語で判定
