@@ -1,7 +1,6 @@
 import Article from "@/app/_components/Article";
 import { notFound } from "next/navigation";
 import { getstyledBlogDetail } from "@/app/_libs/utils";
-import { BlogType } from "@/app/_libs/microcms";
 
 export const dynamic = "force-dynamic";
 
