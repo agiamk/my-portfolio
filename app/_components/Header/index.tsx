@@ -20,7 +20,6 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
   const navItem = [
     { page: "Home", path: "/" },
     { page: "About", path: "/#About" },
-    { page: "Portfolio", path: "/portfolio" },
     { page: "Blog", path: "/blog" },
   ];
 
@@ -81,7 +80,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
           {isScroll ? (
             <>
               {navItem.map((item) => {
-                return item.page === "Portfolio" ? null : (
+                return (
                   <Scroll
                     to={item.page}
                     smooth
@@ -105,7 +104,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
           ) : (
             <>
               {navItem.map((item) => {
-                return item.page === "Portfolio" ? null : (
+                return (
                   <Link
                     href={item.path}
                     key={item.page}
