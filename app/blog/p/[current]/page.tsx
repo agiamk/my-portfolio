@@ -3,7 +3,6 @@ import Pagination from "@/app/_components/Pagination";
 import { BLOG_LIST_LIMIT } from "@/app/_constants";
 import { getBlogList } from "@/app/_libs/microcms";
 import { notFound } from "next/navigation";
-import React from "react";
 
 type Props = {
   params: {
@@ -25,7 +24,7 @@ const Page = async ({ params }: Props) => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center">Tech Blog</h1>
+      <h1 className="text-center text-2xl font-bold">Tech Blog</h1>
       <div className="pt-4">
         <BlogList blogs={blogs} />
         <Pagination totalCount={totalCount} current={current} />
@@ -35,7 +34,7 @@ const Page = async ({ params }: Props) => {
 };
 
 export async function generateStaticParams() {
-  const { contents: blogs } = await getBlogList({});
+  const { contents: blogs } = await getBlogList();
 
   const staticPaths = blogs.map((blog) => ({ id: blog.id }));
 

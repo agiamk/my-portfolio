@@ -20,6 +20,9 @@ const BlogSlide = ({ blogs }: blogListProps) => {
   return (
     <div className="m-4">
       <Swiper
+        style={{
+          paddingBottom: "40px",
+        }} //swiperのスタイルが優先されるためインラインで記載
         pagination={{
           clickable: true,
         }}
@@ -44,7 +47,7 @@ const BlogSlide = ({ blogs }: blogListProps) => {
         {blogs.map((blog) => (
           <SwiperSlide
             key={blog.id}
-            className="bg-slate-100 flex-col"
+            className="flex-col bg-slate-100"
             style={{
               height: "auto",
               display: "flex",
@@ -52,15 +55,15 @@ const BlogSlide = ({ blogs }: blogListProps) => {
           >
             <Link
               href={`/blog/${blog.id}`}
-              className="cursor-pointer p-3 block break-words"
+              className="block cursor-pointer break-words p-3"
             >
               <div>{blog.title}</div>
-              <div className="flex mt-2">
-                <div className="text-xs relative pr-2 after:absolute after:border-r-2 after:top-0 after:right-0 after:border-r-indigo-100 after:h-full">
+              <div className="mt-2 flex">
+                <div className="relative pr-2 text-xs after:absolute after:right-0 after:top-0 after:h-full after:border-r-2 after:border-r-indigo-100">
                   {blog.category.name}
                 </div>
-                <div className="text-xs pl-1">
-                  {formatDate(blog.publishedAt!)}
+                <div className="pl-1 text-xs">
+                  {formatDate(blog.updatedAt ?? blog.publishedAt)}
                 </div>
               </div>
               <div className="mt-auto text-right">Read More</div>

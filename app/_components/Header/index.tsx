@@ -30,7 +30,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
 
   return (
     <Sheet>
-      <header className="flex justify-between items-center">
+      <header className="flex items-center justify-between">
         {isTopPage ? (
           <h1 className="text-xl font-bold">PORTFOLIO</h1>
         ) : (
@@ -42,7 +42,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
           {openMenu ? (
             <button
               onClick={toggleMenu}
-              className="fixed top-4 right-4 bg-black z-50"
+              className="fixed right-4 top-4 z-50 bg-black"
               aria-label="メニューを開く"
             >
               <IconContext.Provider
@@ -58,7 +58,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
           ) : (
             <button
               onClick={toggleMenu}
-              className="absolute top-4 right-4 z-50"
+              className="absolute right-4 top-4 z-50"
               aria-label="メニューを開く"
             >
               <IconContext.Provider
@@ -74,9 +74,9 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
         <nav
           className={`${
             openMenu
-              ? "fixed top-0 right-0 z-20 p-6 pt-16 bg-white w-[calc(100vw_-_13rem)] h-full"
+              ? "fixed right-0 top-0 z-20 h-full w-2/5 bg-white p-6 pt-16"
               : "hidden"
-          } md:flex justify-center items-center gap-7 underline underline-offset-2`}
+          } items-center justify-center gap-7 underline underline-offset-2 md:flex`}
         >
           {isScroll ? (
             <>
@@ -86,7 +86,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
                     to={item.page}
                     smooth
                     key={item.page}
-                    className="cursor-pointer block p-2 m-2"
+                    className="m-2 block cursor-pointer p-2"
                     onClick={() => setOpenMenu(false)}
                   >
                     {item.page}
@@ -96,7 +96,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
               <Link
                 href="https://github.com/agiamk"
                 target="_blank"
-                className="cursor-pointer p-2 m-2"
+                className="m-2 cursor-pointer p-2"
               >
                 GitHub
                 <RxOpenInNewWindow className="inline-block" />
@@ -109,7 +109,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
                   <Link
                     href={item.path}
                     key={item.page}
-                    className="cursor-pointer block p-2 m-2"
+                    className="m-2 block cursor-pointer p-2"
                     onClick={() => setOpenMenu(false)}
                   >
                     {item.page}
@@ -119,7 +119,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
               <Link
                 href="https://github.com/agiamk"
                 target="_blank"
-                className="cursor-pointer p-2 m-2"
+                className="m-2 cursor-pointer p-2"
               >
                 GitHub
                 <RxOpenInNewWindow className="inline-block" />
@@ -129,7 +129,7 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
         </nav>
         {openMenu ? (
           <div
-            className="fixed bg-zinc-900 w-full h-full top-0 left-0 z-10 opacity-25 md:hidden"
+            className="fixed left-0 top-0 z-10 h-full w-full bg-zinc-900 opacity-25 md:hidden"
             onClick={toggleMenu}
           ></div>
         ) : null}
