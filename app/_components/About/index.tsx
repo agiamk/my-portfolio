@@ -1,5 +1,3 @@
-"use client";
-
 import Sheet from "../Sheet";
 import ProfileTab from "../ProfileTab";
 

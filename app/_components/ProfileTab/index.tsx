@@ -1,3 +1,5 @@
+"use client";
+
 import ProfileHobby from "../ProfileHobby";
 import ProfileSkills from "../ProfileSkills";
 import { useState } from "react";
