@@ -15,7 +15,7 @@ type Props = {
 
 const Page = async ({ params, searchParams }: Props) => {
   const data = await getstyledBlogDetail(params.slug, {
-    draftKey: searchParams.draftkey,
+    draftKey: searchParams?.draftkey,
   }).catch(notFound);
 
   return (
