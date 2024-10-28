@@ -5,12 +5,13 @@ import { getBlogList } from "@/app/_libs/microcms";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     current: string;
-  };
+  }>;
 };
 
-const Page = async ({ params }: Props) => {
+const Page = async (props: Props) => {
+  const params = await props.params;
   const current = parseInt(params.current, 10);
 
   if (isNaN(current) || current < 1) {
