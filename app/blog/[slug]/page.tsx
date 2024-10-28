@@ -5,17 +5,19 @@ import { getstyledBlogDetail } from "@/app/_libs/utils";
 export const dynamic = "force-dynamic";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     draftkey?: string;
-  };
+  }>;
 };
 
-const Page = async ({ params, searchParams }: Props) => {
+const Page = async (props: Props) => {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const data = await getstyledBlogDetail(params.slug, {
-    draftKey: searchParams.draftkey,
+    draftKey: searchParams?.draftkey,
   }).catch(notFound);
 
   return (
@@ -27,7 +29,9 @@ const Page = async ({ params, searchParams }: Props) => {
 
 export default Page;
 
-export const generateMetadata = async ({ params, searchParams }: Props) => {
+export const generateMetadata = async (props: Props) => {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const data = await getstyledBlogDetail(params.slug, {
     draftKey: searchParams?.draftkey,
   }).catch(notFound);
