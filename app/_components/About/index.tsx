@@ -3,7 +3,7 @@ import ProfileTab from "../ProfileTab";
 
 const About = () => {
   return (
-    <Sheet bgBlack>
+    <Sheet>
       <div className="flex flex-col md:flex-row md:gap-60">
         <h2 id="About" className="whitespace-nowrap text-2xl">
           About Me

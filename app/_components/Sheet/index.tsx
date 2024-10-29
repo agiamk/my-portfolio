@@ -1,11 +1,10 @@
 type SheetProps = {
   children: React.ReactNode;
-  bgBlack?: boolean;
 };
 
-const Sheet = ({ children, bgBlack = false }: SheetProps) => {
+const Sheet = ({ children }: SheetProps) => {
   return (
-    <section className={`${bgBlack && `bg-black text-white`}`}>
+    <section>
       <div className="mx-auto px-7 py-5 md:container">{children}</div>
     </section>
   );
