@@ -43,7 +43,7 @@ const ProfileTab = () => {
           Biography
         </button>
       </div>
-      <div className="mx-auto max-w-3xl">{tabContent()}</div>
+      <div>{tabContent()}</div>
     </>
   );
 };

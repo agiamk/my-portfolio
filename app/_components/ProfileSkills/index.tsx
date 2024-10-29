@@ -13,36 +13,36 @@ const ProfileSkills = () => {
         Skills
       </h3>
       <div className="p-4">
-        <p>仕様する技術は以下になります。</p>
+        <p>使用する技術は以下になります。</p>
         <IconContext.Provider value={{ size: "60px" }}>
           <div>
-            <div className="mt-8 flex">
+            <div className="mt-8 flex gap-4">
               <div className="flex">
                 <FaHtml5 />
                 <FaCss3Alt />
               </div>
               <div>
-                <h4>HTML/CSS</h4>
+                <p className="mb-4 text-lg font-bold">HTML/CSS</p>
                 <p>現在勤めているアルバイト先で使用しています。</p>
               </div>
             </div>
-            <div className="mt-8 flex">
+            <div className="mt-8 flex gap-4">
               <div className="flex">
                 <FaJs />
                 <BiLogoTypescript />
               </div>
               <div>
-                <h4>JavaScript/TypeScript</h4>
+                <p className="mb-4 text-lg font-bold">JavaScript/TypeScript</p>
                 <p>個人で勉強してきました。</p>
               </div>
             </div>
-            <div className="mt-8 flex">
+            <div className="mt-8 flex gap-4">
               <div className="flex">
                 <FaReact />
                 <RiNextjsFill />
               </div>
               <div>
-                <h4>React/Next.js</h4>
+                <p className="mb-4 text-lg font-bold">React/Next.js</p>
                 <p>
                   個人で勉強してきました。本サイトはNext.jsで作られています。
                 </p>
