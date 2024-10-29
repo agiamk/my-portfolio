@@ -1,13 +1,15 @@
 const Biography = () => {
   return (
     <div className="sm:container">
-      <h3 className="pt-4 text-xl">Biography</h3>
+      <h3 className="mb-5 mt-12 border-l-4 border-gray-600 pl-4 text-2xl font-bold">
+        Biography
+      </h3>
       <div className="p-4">
         <ul className="border-l-4 border-slate-400">
           <li className="relative -ml-2 min-h-32 pb-7 pl-7 before:absolute before:-top-1 before:left-0 before:h-3 before:w-3 before:rounded-xl before:bg-slate-400">
             <div className="flex gap-6 font-bold">
               <time dateTime="2003">2003年10月15日</time>
-              <div>宮城県で生まれる。</div>
+              <div>宮城県で生まれる</div>
             </div>
             <div className="pt-7">
               <p className="pb-4">2003年の主な出来事</p>
@@ -63,7 +65,7 @@ const Biography = () => {
             <p className="pt-4">
               大手のWeb制作会社にアルバイトとして勤務。大企業のWebページの量産、改修に携わり自分の書いたコードが多くの人に閲覧されることを経験し、Webが与える影響力を肌で実感する。
               <br />
-              影響に感動する一方、Webにアクセスしづらい人の目線なども意識するようになりWebアクセシビリティを意識したコーディングを勉強するようになる。
+              影響力を実感する中で、Webにアクセスしづらい人の目線なども意識するようになりWebアクセシビリティを意識したコーディングを勉強するようになる。
             </p>
           </li>
         </ul>

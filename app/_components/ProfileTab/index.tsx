@@ -23,7 +23,7 @@ const ProfileTab = () => {
 
   return (
     <>
-      <div className="mt-8 flex rounded-2xl bg-slate-50 text-[#171717]">
+      <div className="mt-8 flex rounded-2xl bg-slate-200">
         <button
           className={`w-1/3 rounded-2xl pb-2 pt-2 text-center transition duration-150 hover:bg-stone-300 hover:text-white ${activeTab === "Hobby" && "bg-stone-500 text-white"}`}
           onClick={() => setActiveTab("Hobby")}

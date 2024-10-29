@@ -9,7 +9,9 @@ import { RiNextjsFill } from "react-icons/ri";
 const ProfileSkills = () => {
   return (
     <>
-      <h3 className="pt-4 text-xl">Skills</h3>
+      <h3 className="mb-5 mt-12 border-l-4 border-gray-600 pl-4 text-2xl font-bold">
+        Skills
+      </h3>
       <div className="p-4">
         <p>仕様する技術は以下になります。</p>
         <IconContext.Provider value={{ size: "60px" }}>
@@ -41,7 +43,9 @@ const ProfileSkills = () => {
               </div>
               <div>
                 <h4>React/Next.js</h4>
-                <p>個人で勉強してきました。</p>
+                <p>
+                  個人で勉強してきました。本サイトはNext.jsで作られています。
+                </p>
               </div>
             </div>
           </div>
