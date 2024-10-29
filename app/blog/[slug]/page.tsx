@@ -22,7 +22,7 @@ const Page = async (props: Props) => {
 
   return (
     <div>
-      <Article blog={data!} />
+      <Article blog={data} />
     </div>
   );
 };

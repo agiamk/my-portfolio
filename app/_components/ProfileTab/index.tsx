@@ -1,5 +1,6 @@
 "use client";
 
+import Biography from "../Biography";
 import ProfileHobby from "../ProfileHobby";
 import ProfileSkills from "../ProfileSkills";
 import { useState } from "react";
@@ -13,6 +14,8 @@ const ProfileTab = () => {
         return <ProfileHobby />;
       case "Skills":
         return <ProfileSkills />;
+      case "Biography":
+        return <Biography />;
       default:
         return null;
     }
@@ -33,11 +36,14 @@ const ProfileTab = () => {
         >
           Skills
         </button>
-        <button className="w-1/3 rounded-2xl pb-2 pt-2 text-center transition duration-150 hover:bg-stone-300 hover:text-white">
-          なんか適当に
+        <button
+          className={`w-1/3 rounded-2xl pb-2 pt-2 text-center transition duration-150 hover:bg-stone-300 hover:text-white ${activeTab === "Biography" && "bg-stone-500 text-white"}`}
+          onClick={() => setActiveTab("Biography")}
+        >
+          Biography
         </button>
       </div>
-      <div>{tabContent()}</div>
+      <div className="mx-auto max-w-3xl">{tabContent()}</div>
     </>
   );
 };
