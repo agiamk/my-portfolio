@@ -12,14 +12,12 @@ const About = () => {
           About Me
         </h2>
         <div className="pt-4 md:pt-0">
-          <h3>鎌田大河/Taiga Kamada</h3>
+          <h3 className="text-lg font-bold">鎌田大河/Taiga Kamada</h3>
           <p className="pt-2">
             宮城県在住の大学3年生。
             <br />
             大学ではJavaを使ったシステム開発やコンピューターサイエンスについて学んでいます。
             Web制作会社でアルバイトをしており、ページの更新、量産や新規モジュールの開発などをしています。
-            <br />
-            メインはフロントエンドですが、将来的にはフルスタックエンジニアとして活躍したいです。
           </p>
         </div>
       </div>
