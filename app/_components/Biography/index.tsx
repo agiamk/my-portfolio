@@ -27,45 +27,47 @@ const Biography = () => {
             </div>
           </li>
           <li className="relative -ml-2 min-h-32 pb-7 pl-7 before:absolute before:-top-1 before:left-0 before:h-3 before:w-3 before:rounded-xl before:bg-slate-400">
-            <div className="flex gap-6">
+            <div className="flex gap-6 font-bold">
               <time dateTime="2016">2016</time>
               <div>中学入学</div>
             </div>
             <p className="pt-4">
-              部活は弓道部に所属する。当時はプログラミングに関心がなく、パソコンすら持っていなかった。
+              部活は弓道部に所属していました。当時はプログラミングに関心がなく、パソコンすら持っていませんでした。
               <br />
-              趣味でギターを始める。
+              また趣味でギターを始めたのもこの頃です。
             </p>
           </li>
           <li className="relative -ml-2 min-h-32 pb-7 pl-7 before:absolute before:-top-1 before:left-0 before:h-3 before:w-3 before:rounded-xl before:bg-slate-400">
-            <div className="flex gap-6">
+            <div className="flex gap-6 font-bold">
               <time dateTime="2019">2019</time>
               <div>高校入学</div>
             </div>
             <p className="pt-4">
-              軽音楽部に入部し、バンド活動を始める。バンドでは主にベースを担当した。
+              軽音楽部に入部し、バンド活動を始めました。バンドでは主にベースを担当しました。
               <br />
-              大会に出場したり、定禅寺ストリートジャズフェスティバルに出演した。
+              高校時代はバンド活動に力を入れ、大会に出場したり定禅寺ストリートジャズフェスティバルに出演しました。
             </p>
           </li>
           <li className="relative -ml-2 min-h-32 pb-7 pl-7 before:absolute before:-top-1 before:left-0 before:h-3 before:w-3 before:rounded-xl before:bg-slate-400">
-            <div className="flex gap-6">
+            <div className="flex gap-6 font-bold">
               <time dateTime="2022">2022年4月</time>
-              <div>大学入学</div>
+              <div>東北学院大学入学</div>
             </div>
             <p className="pt-4">
-              大学でプログラミングを学び、自分の手で世の中に与えられる影響に関心を持ち本格的にプログラミングを学び始める。
+              大学ではプログラミングや情報工学を学んでいます。
+              <br />
+              作り出したプロダクトが世の中に影響を与えることができることに惹かれ、プログラミングを勉強し始めました。
             </p>
           </li>
           <li className="relative -ml-2 min-h-32 pb-7 pl-7 before:absolute before:-top-1 before:left-0 before:h-3 before:w-3 before:rounded-xl before:bg-slate-400">
-            <div className="flex gap-6">
+            <div className="flex gap-6 font-bold">
               <time dateTime="2022">2023年12月～現在</time>
               <div>Web制作会社でアルバイトを開始</div>
             </div>
             <p className="pt-4">
               大手のWeb制作会社にアルバイトとして勤務。大企業のWebページの量産、改修に携わり自分の書いたコードが多くの人に閲覧されることを経験し、Webが与える影響力を肌で実感する。
               <br />
-              影響力を実感する中で、Webにアクセスしづらい人の目線なども意識するようになりWebアクセシビリティを意識したコーディングを勉強するようになる。
+              影響力を実感する中で、Webにアクセスしづらい人の目線も意識するようになりWebアクセシビリティを意識したコーディングを勉強するようになる。
             </p>
           </li>
         </ul>
