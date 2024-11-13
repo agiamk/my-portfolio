@@ -13,16 +13,6 @@ const ProfileHobby = () => {
             現在でも趣味として演奏を楽しんでいます。
           </p>
         </div>
-        <div>
-          <div>FUJIGEN ベース</div>
-
-          {/* ベースの写真 */}
-        </div>
-        <div>
-          <div>YAMAHA PACIFIKA</div>
-
-          {/* ギターの写真 */}
-        </div>
       </div>
       <div className="p-4">
         <h4 className="mb-4 text-lg font-bold">海外サッカー観戦</h4>
