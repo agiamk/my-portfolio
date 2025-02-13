@@ -1,3 +1,89 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .microCMS-contents h2 {
+    @apply mb-6 mt-14 border-gray-600 bg-slate-200 p-2 pl-4 text-2xl font-bold;
+  }
+
+  .microCMS-contents h2 + * {
+    @apply mt-12;
+  }
+
+  .microCMS-contents h3 {
+    @apply mb-5 mt-12 border-l-4 border-gray-600 pl-4 text-xl font-bold;
+  }
+
+  .microCMS-contents h3 + * {
+    @apply mt-10;
+  }
+
+  .microCMS-contents h4 {
+    @apply mb-4 mt-12 text-lg font-bold;
+  }
+
+  .microCMS-contents p {
+    @apply mb-2 mt-4;
+  }
+
+  .microCMS-contents a {
+    @apply underline hover:text-purple-800;
+  }
+
+  .microCMS-contents a[target="_blank"] {
+    @apply ml-1 inline-block h-4 w-4 align-middle;
+  }
+
+  .microCMS-contents ul {
+    @apply mt-7 pt-4;
+  }
+
+  .microCMS-contents ul + * {
+    @apply mt-7;
+  }
+
+  .microCMS-contents li {
+    @apply ml-8 list-disc;
+  }
+
+  .microCMS-contents li > ul {
+    @apply pt-0;
+  }
+
+  .microCMS-contents li + * {
+    @apply mt-3;
+  }
+
+  .microCMS-contents strong {
+    @apply text-gray-500;
+  }
+
+  .microCMS-contents div[data-filename] {
+    @apply mt-7;
+  }
+
+  .microCMS-contents table {
+    @apply mt-7 border-collapse border-slate-500;
+  }
+
+  .microCMS-contents th {
+    @apply border border-slate-500 bg-slate-300 p-4;
+  }
+
+  .microCMS-contents th p:first-child {
+    @apply mb-2 mt-4;
+  }
+
+  .microCMS-contents td {
+    @apply border border-slate-500 p-3;
+  }
+
+  .microCMS-contents td p:first-child {
+    @apply mb-2 mt-4;
+  }
+
+  .microCMS-contents .iframely-embed {
+    @apply mt-7;
+  }
+}

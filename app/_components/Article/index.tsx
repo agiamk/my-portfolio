@@ -29,7 +29,7 @@ const Article = ({ blog }: ArticleProps) => {
   }, []);
 
   return (
-    <main>
+    <main className="microCMS-contents">
       <div className="flex items-center justify-end gap-4">
         <Category category={blog.category} />
         <time>
