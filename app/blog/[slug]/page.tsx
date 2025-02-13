@@ -1,39 +1,37 @@
 import Article from "@/app/_components/Article";
 import { notFound } from "next/navigation";
 import { getstyledBlogDetail } from "@/app/_libs/utils";
-import { BlogType } from "@/app/_libs/microcms";
 
 export const dynamic = "force-dynamic";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     draftkey?: string;
-  };
+  }>;
 };
 
-const Page = async ({ params, searchParams }: Props) => {
-  let data: BlogType | null = null;
-  try {
-    data = await getstyledBlogDetail(params.slug, {
-      draftKey: searchParams.draftkey,
-    });
-  } catch (e) {
-    console.log(e);
-  }
+const Page = async (props: Props) => {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
+  const data = await getstyledBlogDetail(params.slug, {
+    draftKey: searchParams?.draftkey,
+  }).catch(notFound);
 
   return (
     <div>
-      <Article blog={data!} />
+      <Article blog={data} />
     </div>
   );
 };
 
 export default Page;
 
-export const generateMetadata = async ({ params, searchParams }: Props) => {
+export const generateMetadata = async (props: Props) => {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const data = await getstyledBlogDetail(params.slug, {
     draftKey: searchParams?.draftkey,
   }).catch(notFound);

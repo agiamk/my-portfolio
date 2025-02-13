@@ -3,7 +3,7 @@ import Sheet from "../Sheet";
 
 const Footer = () => {
   return (
-    <Sheet bgBlack>
+    <Sheet>
       <footer>&copy; 2024 Kamada Taiga</footer>
     </Sheet>
   );

@@ -50,34 +50,9 @@ export const getstyledBlogDetail = async (
     $(elm).addClass("hljs");
   });
 
-  $("h2").addClass(
-    "text-2xl font-bold border-gray-600 p-2 pl-4 mt-14 mb-6 bg-slate-200",
-  );
-  $("h2 + *").addClass("mt-12");
-  $("h3").addClass(
-    "text-xl font-bold border-gray-600 border-l-4 pl-4 mt-12 mb-5",
-  );
-  $("h3 + *").addClass("mt-10");
-  $("h4").addClass("font-bold text-lg mt-12 mb-4");
-  $("p").addClass("mt-4 mb-2");
-  $("a").addClass("underline hover:text-purple-800");
-  $("ul").addClass("pt-4 mt-7");
-  $("ul + *").addClass("mt-7");
-  $("li > ul").addClass("pt-0");
-  $("li").addClass("list-disc ml-8");
-  $("li").addClass("list-disc ml-8");
-  $("li + *").addClass("mt-3");
   $("a[target=_blank]").append(
-    "<span class='w-4 h-4 inline-block ml-1 align-middle'><img src='/otherWindow.svg' alt='別窓で開く'></span>",
+    "<span><img src='/otherWindow.svg' alt='別窓で開く'></span>",
   );
-  $("strong").addClass("text-gray-500");
-  $("div[data-filename]").addClass("mt-7");
-  $("table").addClass("mt-7 border-collapse border-slate-500");
-  $("th").addClass("border border-slate-500 bg-slate-300 p-4");
-  $("th p:first-child").addClass("mt-4 mb-2");
-  $("td").addClass("border border-slate-500 p-3");
-  $("td p:first-child").removeClass("mt-4 mb-2");
-  $(".iframely-embed").addClass("mt-7");
 
   // 編集したHTMLを再設定
   detailBlog.content = $.html();
