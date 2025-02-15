@@ -1,6 +1,6 @@
 import { getBlogList } from "../_libs/microcms";
-import BlogList from "../_components/BlogList";
 import { BLOG_LIST_LIMIT } from "../_constants";
+import BlogList from "../_components/BlogList";
 import Pagination from "../_components/Pagination";
 
 const Page = async () => {
