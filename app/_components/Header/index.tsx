@@ -5,7 +5,7 @@ import Sheet from "../Sheet";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
 import { RxOpenInNewWindow } from "react-icons/rx";
 
@@ -27,7 +27,6 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
   };
 
   const handleSetActive = (to: string) => {
-    console.log(to);
     const destination: HTMLElement = document.querySelector("#" + to)!;
     destination.setAttribute("tabIndex", "0");
     destination.focus();
