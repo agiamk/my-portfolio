@@ -14,7 +14,7 @@ type HeaderProps = {
 };
 
 const Header = ({ isTopPage = false }: HeaderProps) => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [menuStatus, setMenuStatus] = useState(false);
 
   const navItem = [
     { page: "Home", path: "/" },
@@ -23,7 +23,7 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
   ];
 
   const toggleMenu = () => {
-    setOpenMenu((prev) => !prev);
+    setMenuStatus((prev) => !prev);
   };
 
   const handleSetActive = (to: string) => {
@@ -49,12 +49,12 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
           </div>
         )}
         <div className="md:hidden">
-          {openMenu ? (
+          {menuStatus ? (
             <button
               onClick={toggleMenu}
               className="fixed right-4 top-4 z-50 bg-black"
               type="button"
-              aria-label="メニューを開く"
+              aria-label="メニューを閉じる"
             >
               <IconContext.Provider
                 value={{
@@ -70,7 +70,7 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
               onClick={toggleMenu}
               className="absolute right-4 top-4 z-50"
               type="button"
-              aria-label="メニューを閉じる"
+              aria-label="メニューを開く"
             >
               <IconContext.Provider
                 value={{
@@ -84,7 +84,7 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
         </div>
         <nav
           className={`${
-            openMenu
+            menuStatus
               ? "fixed right-0 top-0 z-20 h-full w-2/5 bg-white p-6 pt-16"
               : "hidden"
           } items-center justify-center gap-7 underline underline-offset-2 md:flex`}
@@ -99,6 +99,7 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
                 onSetActive={handleSetActive}
                 spy={true}
                 href="#"
+                onClick={() => setMenuStatus(false)}
               >
                 {item.page}
               </Scroll>
@@ -107,7 +108,7 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
                 key={item.page}
                 href={item.path}
                 className="m-2 block cursor-pointer p-2"
-                onClick={() => setOpenMenu(false)}
+                onClick={() => setMenuStatus(false)}
               >
                 {item.page}
               </Link>
@@ -122,7 +123,7 @@ const Header = ({ isTopPage = false }: HeaderProps) => {
             <RxOpenInNewWindow className="inline-block" />
           </Link>
         </nav>
-        {openMenu ? (
+        {menuStatus ? (
           <div
             className="fixed left-0 top-0 z-10 h-full w-full bg-zinc-900 opacity-25 md:hidden"
             onClick={toggleMenu}

@@ -1,13 +1,13 @@
 import "swiper/css/virtual";
 import Sheet from "../Sheet";
 import BlogSlide from "../BlogSlide";
-import { TOP_blog_LIMIT } from "@/app/_constants";
+import { TOP_BLOG_LIMIT } from "@/app/_constants";
 import { getBlogList } from "@/app/_libs/microcms";
 import Button from "../Button";
 
 const Blog = async () => {
   const { contents: blogs } = await getBlogList({
-    limit: TOP_blog_LIMIT,
+    limit: TOP_BLOG_LIMIT,
   });
 
   return (
