@@ -10,38 +10,50 @@ import { MdOutlineClose } from "react-icons/md";
 import { RxOpenInNewWindow } from "react-icons/rx";
 
 type HeaderProps = {
-  isScroll?: boolean;
   isTopPage?: boolean;
 };
 
-const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
+const Header = ({ isTopPage = false }: HeaderProps) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const navItem = [
     { page: "Home", path: "/" },
     { page: "About", path: "/#About" },
-    { page: "Blog", path: "/blog" },
+    { page: "Blog", path: "/#Blog" },
   ];
 
   const toggleMenu = () => {
     setOpenMenu((prev) => !prev);
   };
 
+  const handleSetActive = (to: string) => {
+    const destination: HTMLElement = document.querySelector("#" + to)!;
+    destination.setAttribute("tabIndex", "0");
+    destination.focus();
+  };
+
   return (
     <Sheet>
       <header className="flex items-center justify-between">
         {isTopPage ? (
-          <h1 className="text-xl font-bold">PORTFOLIO</h1>
+          <h1 className="text-xl font-bold">
+            <Link href="/" className="text-xl font-bold">
+              PORTFOLIO
+            </Link>
+          </h1>
         ) : (
-          <Link href="/" className="text-xl font-bold">
-            PORTFOLIO
-          </Link>
+          <div>
+            <Link href="/" className="text-xl font-bold">
+              PORTFOLIO
+            </Link>
+          </div>
         )}
         <div className="md:hidden">
           {openMenu ? (
             <button
               onClick={toggleMenu}
               className="fixed right-4 top-4 z-50 bg-black"
+              type="button"
               aria-label="メニューを開く"
             >
               <IconContext.Provider
@@ -50,7 +62,6 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
                   color: "white",
                 }}
               >
-                {/* TODO:アクセシビリティ的にこの記述大丈夫か */}
                 <MdOutlineClose />
               </IconContext.Provider>
             </button>
@@ -58,7 +69,8 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
             <button
               onClick={toggleMenu}
               className="absolute right-4 top-4 z-50"
-              aria-label="メニューを開く"
+              type="button"
+              aria-label="メニューを閉じる"
             >
               <IconContext.Provider
                 value={{
@@ -77,54 +89,38 @@ const Header = ({ isScroll = false, isTopPage = false }: HeaderProps) => {
               : "hidden"
           } items-center justify-center gap-7 underline underline-offset-2 md:flex`}
         >
-          {isScroll ? (
-            <>
-              {navItem.map((item) => {
-                return (
-                  <Scroll
-                    to={item.page}
-                    smooth
-                    key={item.page}
-                    className="m-2 block cursor-pointer p-2"
-                    onClick={() => setOpenMenu(false)}
-                  >
-                    {item.page}
-                  </Scroll>
-                );
-              })}
-              <Link
-                href="https://github.com/agiamk"
-                target="_blank"
-                className="m-2 cursor-pointer p-2"
+          {navItem.map((item) =>
+            isTopPage ? (
+              <Scroll
+                key={item.page}
+                to={item.page}
+                smooth
+                className="m-2 block cursor-pointer p-2"
+                onSetActive={handleSetActive}
+                spy={true}
+                href="#"
               >
-                GitHub
-                <RxOpenInNewWindow className="inline-block" />
-              </Link>
-            </>
-          ) : (
-            <>
-              {navItem.map((item) => {
-                return (
-                  <Link
-                    href={item.path}
-                    key={item.page}
-                    className="m-2 block cursor-pointer p-2"
-                    onClick={() => setOpenMenu(false)}
-                  >
-                    {item.page}
-                  </Link>
-                );
-              })}
+                {item.page}
+              </Scroll>
+            ) : (
               <Link
-                href="https://github.com/agiamk"
-                target="_blank"
-                className="m-2 cursor-pointer p-2"
+                key={item.page}
+                href={item.path}
+                className="m-2 block cursor-pointer p-2"
+                onClick={() => setOpenMenu(false)}
               >
-                GitHub
-                <RxOpenInNewWindow className="inline-block" />
+                {item.page}
               </Link>
-            </>
+            ),
           )}
+          <Link
+            href="https://github.com/agiamk"
+            target="_blank"
+            className="m-2 cursor-pointer p-2"
+          >
+            GitHub
+            <RxOpenInNewWindow className="inline-block" />
+          </Link>
         </nav>
         {openMenu ? (
           <div

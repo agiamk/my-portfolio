@@ -1,4 +1,3 @@
-import React from "react";
 import Sheet from "./_components/Sheet";
 
 const NotFound = () => {

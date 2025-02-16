@@ -14,8 +14,8 @@ const Blog = async () => {
     <Sheet>
       <div>
         <h2
-          className="mb-6 border-gray-600 bg-slate-200 p-2 pl-4 text-2xl font-bold"
           id="Blog"
+          className="mb-6 border-gray-600 bg-slate-200 p-2 pl-4 text-2xl font-bold"
         >
           Tech Blog
         </h2>
