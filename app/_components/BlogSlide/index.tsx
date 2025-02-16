@@ -20,9 +20,10 @@ const BlogSlide = ({ blogs }: blogListProps) => {
   return (
     <div className="m-4">
       <Swiper
+        //swiperのスタイルが優先されるためインラインで記述
         style={{
           paddingBottom: "40px",
-        }} //swiperのスタイルが優先されるためインラインで記載
+        }}
         pagination={{
           clickable: true,
         }}
@@ -55,18 +56,23 @@ const BlogSlide = ({ blogs }: blogListProps) => {
           >
             <Link
               href={`/blog/${blog.id}`}
-              className="block cursor-pointer break-words p-3"
+              className="inline-block h-full cursor-pointer break-words p-3"
             >
-              <div>{blog.title}</div>
+              <p className="line-clamp-3">{blog.title}</p>
               <div className="mt-2 flex">
-                <div className="relative pr-2 text-xs after:absolute after:right-0 after:top-0 after:h-full after:border-r-2 after:border-r-indigo-100">
+                <p className="relative pr-2 text-xs after:absolute after:right-0 after:top-0 after:h-full after:border-r-2 after:border-r-indigo-100">
                   {blog.category.name}
-                </div>
-                <div className="pl-1 text-xs">
+                </p>
+                <time
+                  className="pl-1 text-xs"
+                  dateTime={formatDate(
+                    blog.updatedAt ?? blog.publishedAt,
+                  ).replaceAll("/", "-")}
+                >
                   {formatDate(blog.updatedAt ?? blog.publishedAt)}
-                </div>
+                </time>
               </div>
-              <div className="mt-auto text-right">Read More</div>
+              <p className="mt-auto text-right">Read More</p>
             </Link>
           </SwiperSlide>
         ))}
