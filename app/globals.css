@@ -36,19 +36,15 @@
   }
 
   .microCMS-contents ul {
-    @apply mt-7 pt-4;
+    @apply mt-7 list-disc pt-4;
   }
 
   .microCMS-contents ul + * {
     @apply mt-7;
   }
 
-  .microCMS-contents li {
-    @apply ml-8 list-disc;
-  }
-
   .microCMS-contents ol {
-    @apply ml-8 list-decimal;
+    @apply list-decimal;
   }
 
   .microCMS-contents li > ul {
