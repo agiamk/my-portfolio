@@ -47,6 +47,10 @@
     @apply ml-8 list-disc;
   }
 
+  .microCMS-contents ol {
+    @apply ml-8 list-decimal;
+  }
+
   .microCMS-contents li > ul {
     @apply pt-0;
   }
