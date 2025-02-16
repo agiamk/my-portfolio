@@ -36,7 +36,7 @@
   }
 
   .microCMS-contents ul {
-    @apply mt-7 list-disc pt-4;
+    @apply mt-7 list-inside list-disc pl-3;
   }
 
   .microCMS-contents ul + * {
@@ -44,7 +44,7 @@
   }
 
   .microCMS-contents ol {
-    @apply list-decimal;
+    @apply mt-7 list-inside list-decimal pl-3;
   }
 
   .microCMS-contents li > ul {
