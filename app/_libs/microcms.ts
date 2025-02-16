@@ -33,7 +33,10 @@ const client = createClient({
 export const getBlogList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<BlogType>({
     endpoint: "blog",
-    queries,
+    queries: {
+      ...queries,
+      orders: "-updatedAt",
+    },
   });
   return listData;
 };
