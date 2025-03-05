@@ -1,4 +1,4 @@
-import { BlogType } from "@/app/_libs/microcms";
+import type { BlogType } from "@/app/_libs/microcms";
 import { formatDate } from "@/app/_libs/utils";
 import Image from "next/image";
 import Link from "next/link";

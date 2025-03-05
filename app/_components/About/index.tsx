@@ -1,5 +1,5 @@
-import Sheet from "../Sheet";
 import ProfileTab from "../ProfileTab";
+import Sheet from "../Sheet";
 
 const About = () => {
   return (

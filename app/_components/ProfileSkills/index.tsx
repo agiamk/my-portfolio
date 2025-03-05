@@ -1,8 +1,8 @@
 import { IconContext } from "react-icons";
+import { BiLogoTypescript } from "react-icons/bi";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaJs } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 

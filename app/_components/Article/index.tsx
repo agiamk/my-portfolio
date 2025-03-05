@@ -1,8 +1,8 @@
 "use client";
 
-import { BlogType } from "@/app/_libs/microcms";
-import Button from "../Button";
+import type { BlogType } from "@/app/_libs/microcms";
 import { formatDate } from "@/app/_libs/utils";
+import Button from "../Button";
 import Category from "../Category";
 import "highlight.js/styles/a11y-dark.css";
 import { useEffect, useState } from "react";

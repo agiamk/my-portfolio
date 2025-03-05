@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* MicroCMSから取得するHTMLのみ@applyでスタイリング */
 @layer components {
   .microCMS-contents h2 {
     @apply mb-6 mt-14 border-gray-600 bg-slate-200 p-2 pl-4 text-2xl font-bold;

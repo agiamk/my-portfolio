@@ -1,9 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Biography from "../Biography";
 import ProfileHobby from "../ProfileHobby";
 import ProfileSkills from "../ProfileSkills";
-import { useState } from "react";
 
 const ProfileTab = () => {
   const [activeTab, setActiveTab] = useState("Hobby");
