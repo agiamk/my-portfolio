@@ -9,7 +9,7 @@ type BlogListProps = {
 };
 
 const BlogList = ({ blogs }: BlogListProps) => {
-  if (blogs.length == 0) <p>ブログが投稿されていません</p>;
+  if (blogs.length === 0) <p>ブログが投稿されていません</p>;
 
   return (
     <div>

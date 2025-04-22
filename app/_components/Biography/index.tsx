@@ -1,7 +1,7 @@
 const Biography = () => {
   return (
     <div className="sm:container">
-      <h3 className="mb-5 mt-12 border-l-4 border-gray-600 pl-4 text-2xl font-bold">
+      <h3 className="mb-5 mt-4 border-l-4 border-gray-600 pl-4 text-2xl font-bold">
         Biography
       </h3>
       <div className="p-4">
