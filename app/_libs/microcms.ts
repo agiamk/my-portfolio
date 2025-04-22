@@ -1,8 +1,8 @@
 import {
+  type MicroCMSImage,
+  type MicroCMSListContent,
+  type MicroCMSQueries,
   createClient,
-  MicroCMSImage,
-  MicroCMSListContent,
-  MicroCMSQueries,
 } from "microcms-js-sdk";
 
 export type BlogType = {

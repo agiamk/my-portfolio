@@ -1,4 +1,4 @@
-import { BlogType } from "@/app/_libs/microcms";
+import type { BlogType } from "@/app/_libs/microcms";
 import { formatDate } from "@/app/_libs/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +9,7 @@ type BlogListProps = {
 };
 
 const BlogList = ({ blogs }: BlogListProps) => {
-  if (blogs.length == 0) <p>ブログが投稿されていません</p>;
+  if (blogs.length === 0) <p>ブログが投稿されていません</p>;
 
   return (
     <div>

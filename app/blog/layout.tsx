@@ -1,6 +1,6 @@
-import Sheet from "../_components/Sheet";
+import type { Metadata } from "next";
 import Header from "../_components/Header";
-import { Metadata } from "next";
+import Sheet from "../_components/Sheet";
 
 export const metadata: Metadata = {
   title: "ブログ一覧",

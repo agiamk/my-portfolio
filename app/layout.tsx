@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notoSansJp } from "@/fonts";
+// import { notoSansJp } from "@/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${notoSansJp.className} text-sm md:text-base`}>
-        {children}
-      </body>
+      <body className="text-sm md:text-base">{children}</body>
     </html>
   );
 }
