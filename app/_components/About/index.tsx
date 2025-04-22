@@ -1,5 +1,5 @@
-import Sheet from "../Sheet";
 import ProfileTab from "../ProfileTab";
+import Sheet from "../Sheet";
 
 const About = () => {
   return (
@@ -14,7 +14,7 @@ const About = () => {
         <div className="pt-4 md:pt-0">
           <h3 className="text-lg font-bold">鎌田大河/Taiga Kamada</h3>
           <p className="pt-2">
-            宮城県在住の大学3年生。
+            宮城県在住の大学4年生。
             <br />
             大学ではJavaを使ったシステム開発やコンピューターサイエンスについて学んでいます。
             Web制作会社でアルバイトをしており、ページの更新、量産や新規モジュールの開発などをしています。

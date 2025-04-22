@@ -1,9 +1,9 @@
-import { getBlogList } from "../_libs/microcms";
-import { BLOG_LIST_LIMIT } from "../_constants";
+import { Suspense } from "react";
 import BlogList from "../_components/BlogList";
 import Pagination from "../_components/Pagination";
 import SearchField from "../_components/SearchField";
-import { Suspense } from "react";
+import { BLOG_LIST_LIMIT } from "../_constants";
+import { getBlogList } from "../_libs/microcms";
 
 const Page = async () => {
   const { contents: blogs, totalCount } = await getBlogList({

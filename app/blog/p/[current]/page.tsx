@@ -12,7 +12,7 @@ type Props = {
 
 const Page = async (props: Props) => {
   const params = await props.params;
-  const current = parseInt(params.current, 10);
+  const current = Number.parseInt(params.current, 10);
 
   if (isNaN(current) || current < 1) {
     notFound();

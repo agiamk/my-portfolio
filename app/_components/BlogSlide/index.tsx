@@ -1,14 +1,14 @@
 "use client";
 
-import { BlogType } from "@/app/_libs/microcms";
+import type { BlogType } from "@/app/_libs/microcms";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/virtual";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import { formatDate } from "@/app/_libs/utils";
 import Link from "next/link";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 type blogListProps = {
   blogs: BlogType[];

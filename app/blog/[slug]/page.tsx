@@ -1,6 +1,6 @@
 import Article from "@/app/_components/Article";
-import { notFound } from "next/navigation";
 import { getstyledBlogDetail } from "@/app/_libs/utils";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 

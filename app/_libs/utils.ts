@@ -1,10 +1,10 @@
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-import { getBlogDetail } from "./microcms";
-import hljs, { HighlightResult } from "highlight.js";
 import { load } from "cheerio";
-import { MicroCMSQueries } from "microcms-js-sdk";
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+import hljs, { type HighlightResult } from "highlight.js";
+import type { MicroCMSQueries } from "microcms-js-sdk";
+import { getBlogDetail } from "./microcms";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
